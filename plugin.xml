@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ihealth.plugin.mipushmanagercordova"
+        version="0.0.1">
+
+  <name>plugin_Mipush</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/MipushManagerCordova.js" target="js/MipushManagerCordova.js"/>
+
+  <js-module src="www/MipushManagerCordova.js" name="MipushManagerCordova">
+    <clobbers target="MipushManagerCordova" />
+  </js-module>
+
+  <platform name="android">
+
+    <source-file src="src/android/MipushManagerCordova.java" target-dir="src/com/ihealth/plugin/" />  
+    <source-file src="src/android/MipushManager.java" target-dir="src/com/ihealth/plugin/" />
+    <source-file src="src/android/MessageReceiver.java" target-dir="src/com/ihealth/plugin/" />
+    <lib-file src="src/android/libs/MiPush_SDK_Client_2_2_7_sdk.jar" />
+    <lib-file src="src/android/libs/android-support-v4.jar" />  
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="MipushManagerCordova">
+        <param name="android-package" value="com.ihealth.plugin.MipushManagerCordova"/>
+      </feature>
+    </config-file>
+    
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+
+      <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+      <uses-permission android:name="com.xiaomi.permission.AUTH_SERVICE" />
+      <permission
+        android:name="com.ihealth.oasispd1.doctor.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signatureOrSystem" />
+      <uses-permission android:name="com.ihealth.oasispd1.doctor.permission.MIPUSH_RECEIVE" />
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service
+            android:name="com.xiaomi.push.service.XMPushService"
+            android:enabled="true"
+            android:process=":pushservice" />
+    </config-file>  
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true" />
+    </config-file>  
+    <config-file target="AndroidManifest.xml" parent="/manifest/application"> 
+      <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true" />
+    </config-file>  
+    <config-file target="AndroidManifest.xml" parent="/manifest/application"> 
+       <receiver
+          android:name="com.ihealth.plugin.MessageReceiver"
+          android:exported="true" >
+          <intent-filter>
+            <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+          </intent-filter>
+          <intent-filter>
+            <action android:name="com.xiaomi.mipush.ERROR" />
+          </intent-filter>
+        </receiver>
+    </config-file>    
+
+  </platform>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Hello">
+        <param name="ios-package" value="HWPHello" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
+    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/Hello.cs"/>
+  </platform>
+
+</plugin>
