@@ -35,13 +35,8 @@ public class MipushManager {
 		
 	}
 	
-	private String APPID = "2882303761517340443";
-	private String APPSECRET = "5571734098443";
-
-	public void setIdAndSecret(String id, String secret){
-		this.APPID = id;
-		this.APPSECRET = secret;
-	}
+	private static final String APPID = "2882303761517419321";
+	private static final String APPSECRET = "5771741955321";
 	
 	public void register(){
 		new Thread(){

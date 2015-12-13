@@ -6,7 +6,7 @@ This is a cordova plugin for Mipush.
 
 ### Add the plugin
 
-    $ meteor add cordova:com.ihealth.plugin.mipushmanagercordova@https://github.com/iHealthLab/plugin-ihealth-mipush/tarball/2964449d10255cd2845926dfd6a641dda59a33f5
+    $ meteor add cordova:com.ihealth.plugin.mipushmanagercordova@https://github.com/iHealthLab/plugin-ihealth-mipush/tarball/52e6cc1790662b5431b736f6286a881d2fcc59b8
 
 
 ### Remove the plugin

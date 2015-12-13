@@ -58,11 +58,6 @@ public class MipushManagerCordova extends CordovaPlugin{
 		if (action.equals("register")) {
 			MipushManager.getInstance().register();
             return true;
-        }else if(action.equals("registerEx")){
-        	String id = args.getString(0);
-        	String secret = args.getString(1);
-			MipushManager.getInstance().setIdAndSecret(id, secret)
-        	MipushManager.getInstance().register();
         }else{
         	return false;
         }
