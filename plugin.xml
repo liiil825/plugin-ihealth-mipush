@@ -37,9 +37,9 @@
       <uses-permission android:name="android.permission.READ_PHONE_STATE" />
       <uses-permission android:name="com.xiaomi.permission.AUTH_SERVICE" />
       <permission
-        android:name="com.ihealth.oasispd1.doctor.permission.MIPUSH_RECEIVE"
+        android:name="com.ihealth.datun.doctor.permission.MIPUSH_RECEIVE"
         android:protectionLevel="signatureOrSystem" />
-      <uses-permission android:name="com.ihealth.oasispd1.doctor.permission.MIPUSH_RECEIVE" />
+      <uses-permission android:name="com.ihealth.datun.doctor.permission.MIPUSH_RECEIVE" />
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <service
