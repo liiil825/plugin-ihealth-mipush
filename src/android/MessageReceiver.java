@@ -44,8 +44,8 @@ public class MessageReceiver extends PushMessageReceiver {
 	}
 
 	private Intent mIntent;
-	private final String packageName = "com.ihealth.oasispd1.doctor";
-	private final String main_entry = "com.ihealth.oasispd1.doctor.CordovaApp";
+	private final String packageName = "com.ihealth.datun.doctor";
+	private final String main_entry = "com.ihealth.datun.doctor.CordovaApp";
 	@Override
 	public void onReceiveMessage(Context context, MiPushMessage message) {
 		Log.i(TAG, "收到推送信息" + message.getContent());
