@@ -21,7 +21,7 @@
     <source-file src="src/android/MipushManager.java" target-dir="src/com/ihealth/plugin/" />
     <source-file src="src/android/MessageReceiver.java" target-dir="src/com/ihealth/plugin/" />
     <lib-file src="src/android/libs/MiPush_SDK_Client_2_2_7_sdk.jar" />
-    <lib-file src="src/android/libs/android-support-v4.jar" />  
+    <lib-file src="src/android/libs/android-support-v13.jar" />  
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="MipushManagerCordova">
